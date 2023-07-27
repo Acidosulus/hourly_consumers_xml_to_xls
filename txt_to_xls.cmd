@@ -1,0 +1,1 @@
+python hourly_consumers_txt_to_xls.py %1

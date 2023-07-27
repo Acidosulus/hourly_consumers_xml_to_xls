@@ -1,0 +1,7 @@
+python hourly_consumers_xml_to_xls.py "C:\hourly_consumers_xml_to_xls\data\mg"
+rem python hourly_consumers_xml_to_xls.py "C:\hourly_consumers_xml_to_xls\data\test6"
+rem python hourly_consumers_xml_to_xls.py "C:\hourly_consumers_xml_to_xls\data\test5"
+rem python hourly_consumers_xml_to_xls.py "C:\hourly_consumers_xml_to_xls\data\test4"
+rem python hourly_consumers_xml_to_xls.py "C:\hourly_consumers_xml_to_xls\data\test3"
+rem python hourly_consumers_xml_to_xls.py "C:\hourly_consumers_xml_to_xls\data\test2"
+rem python hourly_consumers_xml_to_xls.py "C:\hourly_consumers_xml_to_xls\data\test"
