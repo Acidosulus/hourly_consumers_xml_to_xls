@@ -79,7 +79,10 @@ class loader_hourly_displays_from_txt:
 				if lc in data_dict:
 					data_dict[lc] += float(ld['value'])
 				else:
-					data_dict[lc] = float(ld['value'])
+					try: # актуально для снятых ПУ у которых нет полноты заполнения по датам
+						data_dict[lc] = float(ld['value'])
+					except:
+						pass
 		print(data_dict)
 		for key in data_dict:
 			ld = {'date':'20'+sx(key,'/','_')[0:2]+sx(key,'/','_')[2:6],  'hour':sx(key,'_','/'), 'value':data_dict[key]}
@@ -105,7 +108,10 @@ class loader_hourly_displays_from_txt:
 		echo(style(text=pc_file_name, fg='blue', bg='white'))
 		ll_array = []
 		for row in self.halfhour_list:
-			ll_array.append([self.point, row['date'], row['halfhour'], float(row['value'])])
+			value = 0 
+			try: value = float(row['value'])
+			except: pass 
+			ll_array.append([self.point, row['date'], row['halfhour'], value])
 		ll_columns = ['ПУ','Дата','Получасовка','Значение']
 		df = pandas.DataFrame(ll_array, columns=ll_columns )
 		#writer = pandas.ExcelWriter(os.path.dirname(self.source_directory_path)+f'\\{self.point}_{pc_file_name}', engine='xlsxwriter')
